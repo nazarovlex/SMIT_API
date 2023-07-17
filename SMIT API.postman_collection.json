@@ -1,0 +1,94 @@
+{
+	"info": {
+		"_postman_id": "1c84f350-dda1-48f4-b9f3-055df11bbfc7",
+		"name": "SMIT API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27515893"
+	},
+	"item": [
+		{
+			"name": "price",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/price?price=100&date=2020-06-01&cargo_type=Glass",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"price"
+					],
+					"query": [
+						{
+							"key": "price",
+							"value": "100"
+						},
+						{
+							"key": "date",
+							"value": "2020-06-01"
+						},
+						{
+							"key": "cargo_type",
+							"value": "Glass"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "tariff",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"2020-06-01\": [\n        {\n            \"cargo_type\": \"Glass\",\n            \"rate\": \"0.04\"\n        },\n        {\n            \"cargo_type\":\"Other\",\n            \"rate\": \"0.01\"\n        }\n    ],\n    \"2020-07-01\": [\n        {\n            \"cargo_type\": \"Glass\",\n            \"rate\": \"0.035\"\n        },\n        {\n            \"cargo_type\":\"Other\",\n            \"rate\": \"0.015\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/tariff",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"tariff"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
